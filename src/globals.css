@@ -1,0 +1,59 @@
+:root {
+  color-scheme: light dark;
+
+  --background-primary: white;
+  --text-primary: black;
+  --text-secondary: darkgreen;
+
+  font-family: "Adamina", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-primary: black;
+    --text-primary: orange;
+    --text-secondary: blue;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-primary);
+}
+
+p {
+  font-size: 72px;
+
+  background: linear-gradient(
+    to left,
+    var(--background-primary) 50%,
+    var(--text-primary) 50%,
+    var(--text-secondary) 100%
+  );
+
+  background-size: 200%;
+  background-repeat: no-repeat;
+
+  animation: fadeText 0.5s backwards;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem;
+}
+
+@keyframes fadeText {
+  0% {
+    background-position: 100%;
+  }
+  50% {
+    background-position: 75%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
